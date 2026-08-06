@@ -1,7 +1,7 @@
-FROM alpine:latest
+FROM teddysun/xray
 
-WORKDIR /app
+COPY config.json /etc/xray/config.json
 
 EXPOSE 8080
 
-CMD ["sh", "-c", "sleep infinity"]
+CMD ["xray", "-config", "/etc/xray/config.json"]
